@@ -1,0 +1,48 @@
+
+<!-- saved from url=(0076)http://www.taixing.gov.cn/module/xxgk/tree.jsp?divid=div54226&area=014442141 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="StyleSheet" href="./dtree.css" type="text/css">
+<script language="javascript" src="./dtree.js.下载"></script>
+<script language="javascript" src="./jquery.js.下载"></script>
+<script language="javascript">
+	 var d = new dTree('d'); d.add(0,-1,0,'<a style="cursor:hand;" onclick="funclick(0,\'\');">泰州市泰兴生态环境局(258)</a>'); d.add(413,0,0,'<a style="cursor:hand;" onclick="funclick(\'01\',\'\');">机构概况(2)</a>','','','','','',true); d.add(414,0,0,'<a style="cursor:hand;" onclick="funclick(\'02\',\'\');">法规公文(123)</a>','','','','','',true); d.add(417,0,0,'<a style="cursor:hand;" onclick="funclick(\'05\',\'\');">规划计划(4)</a>','','','','','',true); d.add(425,0,0,'<a style="cursor:hand;" onclick="funclick(\'13\',\'\');">信息公开年报(1)</a>','','','','','',true); d.add(426,0,0,'<a style="cursor:hand;" onclick="funclick(\'14\',\'\');">重点领域(123)</a>','','','','','',true); d.add(427,0,0,'<a style="cursor:hand;" onclick="funclick(\'15\',\'\');">其他(5)</a>','','','','','',true); d.add(428,413,0,'<a style="cursor:hand;" onclick="funclick(\'0101\',\'\');">领导信息(1)</a>','','','','','',true); d.add(430,413,0,'<a style="cursor:hand;" onclick="funclick(\'0103\',\'\');">机构设置(1)</a>','','','','','',true); d.add(435,414,0,'<a style="cursor:hand;" onclick="funclick(\'0204\',\'\');">部门(乡镇)文件(123)</a>','','','','','',true); d.add(437,417,0,'<a style="cursor:hand;" onclick="funclick(\'0502\',\'\');">计划总结(3)</a>','','','','','',true); d.add(444,426,0,'<a style="cursor:hand;" onclick="funclick(\'1407\',\'\');">环境保护(123)</a>','','','','','',true);
+	document.write(d);
+	function funclick(i_id, order){
+		var divid = "div54226";
+		var webid = "124";
+		var area = "014442141";
+		var page = "";
+		if(order != ""){
+			order = "&sortfield=" + order;
+		}
+		var obj = eval("parent.document.getElementById('" + divid + "')");
+		obj.innerHTML = "正在加载内容，请稍候...";
+		$.ajax({
+			type: "POST",
+			url: "./search.jsp?divid="+divid+"&infotypeId="+i_id+"&jdid="+webid+"&area="+area+order,
+			cache: false,
+			success: function(msg){
+				loadDefult(obj, msg);
+			},
+			error :function(){
+	        	loadError(obj);
+			}
+		});
+	}
+	
+	function loadDefult(obj, strValue){
+		if(strValue != "undefined" && strValue != ""){
+		   obj.innerHTML = trim(strValue);
+		}else{
+		   obj.innerHTML = "";
+		}
+	}
+	
+	function loadError(obj){
+	   obj.innerHTML = "数据请求失败或连接超时...";
+	}
+	
+	function ltrim(s){return s.replace(/^\s*/, "")}    //过滤左空格
+	function rtrim(s){return s.replace(/\s*$/, "");}   //过滤右空格
+	function trim(s){return rtrim(ltrim(s));}            //过滤左右空格
+</script></head><body><div class="dtree">
+<div class="dTreeNode"><a style="cursor:hand;" onclick="funclick(0,&#39;&#39;);">泰州市泰兴生态环境局(258)</a></div><div id="dd0" class="clip" style="display:block;"><div class="dTreeNode"><a href="javascript: d.o(1);"><img id="jd1" src="./minus.gif" alt=""></a><a href="javascript: d.o(1);" class="node"></a><a style="cursor:hand;" onclick="funclick(&#39;01&#39;,&#39;&#39;);">机构概况(2)</a></div><div id="dd1" class="clip" style="display:block;"><div class="dTreeNode"><img src="./line.gif" alt=""><img src="./join.gif" alt=""><a style="cursor:hand;" onclick="funclick(&#39;0101&#39;,&#39;&#39;);">领导信息(1)</a></div><div class="dTreeNode"><img src="./line.gif" alt=""><img src="./joinbottom.gif" alt=""><a style="cursor:hand;" onclick="funclick(&#39;0103&#39;,&#39;&#39;);">机构设置(1)</a></div></div><div class="dTreeNode"><a href="javascript: d.o(2);"><img id="jd2" src="./minus.gif" alt=""></a><a href="javascript: d.o(2);" class="node"></a><a style="cursor:hand;" onclick="funclick(&#39;02&#39;,&#39;&#39;);">法规公文(123)</a></div><div id="dd2" class="clip" style="display:block;"><div class="dTreeNode"><img src="./line.gif" alt=""><img src="./joinbottom.gif" alt=""><a style="cursor:hand;" onclick="funclick(&#39;0204&#39;,&#39;&#39;);">部门(乡镇)文件(123)</a></div></div><div class="dTreeNode"><a href="javascript: d.o(3);"><img id="jd3" src="./minus.gif" alt=""></a><a href="javascript: d.o(3);" class="node"></a><a style="cursor:hand;" onclick="funclick(&#39;05&#39;,&#39;&#39;);">规划计划(4)</a></div><div id="dd3" class="clip" style="display:block;"><div class="dTreeNode"><img src="./line.gif" alt=""><img src="./joinbottom.gif" alt=""><a style="cursor:hand;" onclick="funclick(&#39;0502&#39;,&#39;&#39;);">计划总结(3)</a></div></div><div class="dTreeNode"><img src="./join.gif" alt=""><a style="cursor:hand;" onclick="funclick(&#39;13&#39;,&#39;&#39;);">信息公开年报(1)</a></div><div class="dTreeNode"><a href="javascript: d.o(5);"><img id="jd5" src="./minus.gif" alt=""></a><a href="javascript: d.o(5);" class="node"></a><a style="cursor:hand;" onclick="funclick(&#39;14&#39;,&#39;&#39;);">重点领域(123)</a></div><div id="dd5" class="clip" style="display:block;"><div class="dTreeNode"><img src="./line.gif" alt=""><img src="./joinbottom.gif" alt=""><a style="cursor:hand;" onclick="funclick(&#39;1407&#39;,&#39;&#39;);">环境保护(123)</a></div></div><div class="dTreeNode"><img src="./joinbottom.gif" alt=""><a style="cursor:hand;" onclick="funclick(&#39;15&#39;,&#39;&#39;);">其他(5)</a></div></div></div></body></html>
